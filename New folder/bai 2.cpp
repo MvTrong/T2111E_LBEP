@@ -1,27 +1,45 @@
-#include<iostream>
+#include <stdio.h>
+#include <conio.h>
 using namespace std;
-void reverseArray(int ary[]){
-	int sizeOfArray = sizeof(ary);
-	for (int i=0;i<sizeOfArray;i){
-		if(i<sizeOfArray-(i+1)){
-			int temp = ary[i];
-			ary[i]= ary[sizeOfArray-(i+1)];
-			ary[sizeOfArray - (i+1)] = temp;
-			
-		}else
-		{
-			break;
-		}
-	}
+void nhapmang(int a[], int &n)
 
-	
-	
+{ printf("nhap so phan tu :" );
+  scanf("%d",&n);
+  for(int i=0;i<n;i++)
+  { printf(" phan tu arr [%d] :",i);
+    scanf("%d",&a[i]);
+  }
+  
+}
+int xuatmang(int a[],int n)
+ {
+  for(int i=0;i<n;i++)
+     {
+        printf("%d \t",a[i]);
+     }
+ }
+ 
+void daonguoc(int a[],int n)
+{
+ for(int i=0;i<=n/2;i++)
+  {
+   int temp=a[i];
+   a[i]=a[n-1-i];
+   a[n-1-i]=temp;
+  }
+  
+ printf("\nmang nguoc lai la: ");
+ for(int i=0;i<n;i++)
+     {
+        printf("%d ",a[i]);
+     } 
 }
 
-int main(){
-	int arr [] = {10,20,30,40,50,60};
-	int arrSize = sizeof(arr)/sizeof(arr[0]);
-	cout << " The size of the array is :" << arrSize;
-	return 0;
-	
+int main()
+{
+ int a[50],n;
+ nhapmang(a,n);
+ xuatmang(a,n);
+ daonguoc(a,n);
+ return 0;
 }
